@@ -1,0 +1,22 @@
+<!-- booking_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Ticket for {{ stage_event_show.title }}</h1> <!-- Assuming title is an attribute of StageEventShow -->
+        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Renders form fields -->
+            <button type="submit">Book Now</button>
+        </form>
+        
+        <a href="{% url 'book-ticket' %}">Back to Events</a> <!-- Link back to event list -->
+    </div>
+</body>
+</html>
